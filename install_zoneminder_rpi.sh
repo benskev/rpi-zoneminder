@@ -61,10 +61,29 @@ cleanup_apt()
 #Clean up after apt
 cleanup_apt()
 
-#echo "Zoneminder is now available at http://$myip/zm"
+#PostInstall config:
+
+# nullmailer
+dpkg-reconfigure nullmailer
+
+#Set mysql root user password: 
+read -p "Do you want to reconfigure MySQL [y/n]? " cfgMySQL;
+if [$cfgMySql == "y"]; then
+read -p "Please enter your current MySQL root user password: " cfgMySQLoRtPw;
+read -p "Please enter your new MySQL root user password: " cfgMySQLnRtPw1;
+read -p "Please enter your new MySQL root user password: " cfgMySQLnRtPw2;
+if [ $cfgMySQLnRtPw1 == $cfgMySQLRtPw2 ]; then
+mysqladmin -u root $cfgMySQLoRtPw $cfgMySQLnRtPw1
+fi
+read -p "Please enter your current MySQL admin user password: " cfgMySQLoRtPw;
+read -p "Please enter your new MySQL admin user password: " cfgMySQLnRtPw1;
+read -p "Please enter your new MySQL admin user password: " cfgMySQLnRtPw2;
+if [ $cfgMySQLnRtPw1 == $cfgMySQLRtPw2 ]; then
+mysqladmin -u admin $cfgMySQLoRtPw $cfgMySQLnRtPw1
+fi
+fi
+
+echo "Zoneminder is now available at http://$myip/zm"
 
 
-#PostInstall: dpkg-reconfigure nullmailer
-#Set mysql root user password: mysqladmin -u root password NEWPASSWORD
-#Set zoneminder mysql password: mysqladmin -u admin password NEWPASSWORD
 
