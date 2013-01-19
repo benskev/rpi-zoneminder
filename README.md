@@ -1,3 +1,7 @@
+<h2>Alternative Summary for the forked Raspberyy PI zoneminder installer.</h2>
+<p>Greetz go to <a href="https://github.com/ghoulmann">Ghoulmann</a> for the <a href="https://github.com/ghoulmann/rpi-zoneminder">AMAZING code:D</a>, and to <a href="https://github.com/eyezm/ZoneMinder">EyeZM</a> for writing this amazing program. You are 1337.</p>
+<hr><h6>Original README:</h6>
+
 <h2>Summary</h2>
 Powerful web-based surveillance system for USB or IP cameras and the Rasperry Pi (Raspbian).
 <h2>Zoneminder Resources and Reference</h2>
